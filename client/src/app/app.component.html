@@ -1,0 +1,11 @@
+<h1>Test WebTransport</h1>
+<button (click)="restartWebTransportClient()">Restart WebTransport</button>
+<button (click)="initSession()">Init WebTransport Streams</button>
+<button (click)="startBistreams()">Start Bistreams</button>
+<input type="text" [(ngModel)]="message" />
+<select [(ngModel)]="selectedStream">
+  @for (num of streams; track $index) {
+    <option [value]="$index">{{ $index }}</option>
+  }
+</select>
+<button (click)="sendMessageToStream(selectedStream, message)">Send</button>
